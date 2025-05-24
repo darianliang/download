@@ -11,10 +11,13 @@ class API:
         ydl_opts = {}
 
         desktop_path = os.path.expanduser("~/Desktop")
+        ffmeg_path = shutil.which("ffmpeg")
+        if not ffmeg_path:
+            ffmpeg_path = "/usr/local/bin/ffmpeg"
 
         if format_choice == "mp3":
             ydl_opts = {
-                'ffmpeg_location': '/usr/local/bin/ffmpeg',
+                'ffmpeg_location': ffmpeg_path,
                 'format': 'bestaudio/best',
                 'outtmpl': os.path.join(desktop_path, '%(title)s.%(ext)s'),
                 'postprocessors': [{
