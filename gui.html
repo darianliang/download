@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DOWNLOAD</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @font-face {
+      font-family: 'myfont';
+      src: url('myfont.otf') format('truetype');
+    }
+    body {
+        font-family: 'myfont', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>DOWNLOAD</h1>
+    <input type="text" id="url" placeholder="paste link" />
+    <!-- <select id="format">
+      <option value="mp3">mp3</option>
+      <option value="mp4">mp4</option>
+    </select> -->
+
+    <div class="format-buttons">
+        <button onclick="setFormat('mp3')" id = "mp3button">mp3</button>
+        <button onclick="setFormat('mp4')" id = "mp4button">mp4</button>
+    </div>
+    <div>
+        <button onclick="startDownload()">BEGIN</button>
+    </div>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    let selectedFormat = 'mp3';
+
+    function setFormat(format) {
+        selectedFormat = format;
+        document.getElementById("mp3button").classList.remove("selected");
+        document.getElementById("mp4button").classList.remove("selected");
+        document.getElementById(format + "button").classList.add("selected");
+    }
+
+    function startDownload() {
+      const url = document.getElementById('url').value;
+      const downloadbutton = document.querySelector("button[onclick='startDownload()']");
+      const status = document.getElementById('status');
+
+      downloadbutton.disabled = true;
+      downloadbutton.innerText = "in progress...";
+      downloadbutton.style.opacity = 0.7;
+
+      window.pywebview.api.download(url, selectedFormat).then(result => {
+        document.getElementById('status').innerText = result;
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+body {
+  font-family: 'myfont', sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 40px;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-align-last: center;
+}
+
+.format-buttons {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.format-buttons button {
+  margin: 0px 15px;
+  padding: 8px 20px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background-color: #eee;
+}
+
+.format-buttons button:hover {
+  background-color: #ddd;
+}
+
+.format-buttons button.selected {
+  background-color: #839ab4;
+  color: white;
+}
+
+.download-section {
+    margin-top: 0px;
+}
+
+.download-section button {
+  padding: 10px 24px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#status {
+  margin-top: 25px;
+  color: green;
+  font-size: 14px;
+}
