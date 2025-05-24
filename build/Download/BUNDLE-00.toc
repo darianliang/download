@@ -1,0 +1,3 @@
+([('Download',
+   '/Users/darianliang/Desktop/youtube to mp3/download/dist/Download',
+   'EXECUTABLE')],)
