@@ -1,5 +1,6 @@
 import webview
 import yt_dlp
+import shutil
 import os
 
 class API:
@@ -9,11 +10,13 @@ class API:
         
         ydl_opts = {}
 
+        desktop_path = os.path.expanduser("~/Desktop")
+
         if format_choice == "mp3":
             ydl_opts = {
                 'ffmpeg_location': '/usr/local/bin/ffmpeg',
                 'format': 'bestaudio/best',
-                'outtmpl': '%(title)s.%(ext)s',
+                'outtmpl': os.path.join(desktop_path, '%(title)s.%(ext)s'),
                 'postprocessors': [{
                     'key': 'FFmpegExtractAudio',
                     'preferredcodec': 'mp3',
@@ -24,7 +27,7 @@ class API:
             ydl_opts = {
                 'ffmpeg_location': '/usr/local/bin/ffmpeg',
                 'format': 'bestvideo+bestaudio/best',
-                'outtmpl': '%(title)s.%(ext)s',
+                'outtmpl': os.path.join(desktop_path, '%(title)s.%(ext)s'),
                 'merge_output_format': 'mp4',
             }
 
@@ -38,3 +41,4 @@ class API:
 api = API()
 webview.create_window("DOWNLOAD", "gui.html", js_api=api, width=500, height=400)
 webview.start()
+
