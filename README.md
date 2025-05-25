@@ -1,8 +1,9 @@
 # DOWNLOAD
 
-A clean desktop app that downloads YouTube videos as mp3 
-or mp4 files using a visual interface built using Python,
-HTML, and CSS. Only for MacOS
+A clean desktop app that downloads videos from services
+such as YouTube, Twitter, and Instagram as mp3 or mp4 
+files using a visual interface built using Python, HTML, 
+and CSS. Only for MacOS currently
 
 ### How to use:
 - install dependencies via pip install -r requirements.txt
