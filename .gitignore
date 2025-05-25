@@ -1,3 +1,7 @@
 dist/
 build/
+<<<<<<< HEAD
 .DS_Store
+=======
+.DS_Store
+>>>>>>> 4924e3e2fe544177e7de934d2edd14e63e8c35b8
